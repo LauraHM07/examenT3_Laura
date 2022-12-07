@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="commons/header :: header"/>
+
+<body>
+    <div th:replace="commons/menu :: menu" />
+
+    <div class="container">
+        <main>
+
+            <div class="row g-5">
+                <div class="col-8">
+                    <h4 class="mb-3">Datos Alumno</h4>
+
+                    <form class="needs-validation" method="post" th:action="@{/alumnos/update}" enctype="multipart/form-data">
+                        <input type="hidden" name="codigo" th:value="${alumno.codigo}">
+
+                        <div class="row g-4">
+                            <div class="col-sm-6">
+                                <label for="nombre" class="form-label">Nombre</label>
+
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" th:value="${alumno.nombre}" value="" required>
+                               
+                                <div class="invalid-feedback">
+                                    Nombre requerido.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label for="lastName" class="form-label">Apellidos</label>
+
+                                <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="" th:value="${alumno.apellidos}" value="" required>
+                               
+                                <div class="invalid-feedback">
+                                    Apellidos requeridos.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label for="dni" class="form-label">DNI</label>
+                                
+                                <input type="text" class="form-control" id="dni" name="dni" placeholder="" th:value="${alumno.dni}" value="" required>
+                                
+                                <div class="invalid-feedback">
+                                    Dni requerido.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label for="fechaNacimiento" class="form-label">Fecha Nacimiento</label>
+                               
+                                <input type="text" class="form-control" id="fechaNacimiento" name="fechaNacimiento" placeholder="" th:value="${alumno.fechaNacimiento}" value="">
+                            </div>
+
+                            <div class="col-sm-12">
+                                <label for="email" class="form-label">Email</label>
+                                
+                                <input type="email" class="form-control" id="email" name="email" th:value="${alumno.email}">
+                                
+                                <div class="invalid-feedback">
+                                    Introduce tu email.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="nuevo" name="nuevo" th:checked="${alumno.nuevo}">
+                                    <label class="form-check-label" for="nuevo">Es alumno nuevo</label>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="imagen">Imagen</label>
+                                    <img class="card-img-top" th:src="'data:image/jpeg;base64,' + ${alumno.imageView}" src="../static/img/imagen.jpeg">
+    
+                                    <input type="file" class="form-control-file" id="imagenForm" name="imagenForm">
+                                  </div>
+                            </div>
+                        </div>
+
+                        
+
+                        <hr class="my-4">
+
+                        <div class="col-sm-12">
+                            <div class="btn-group">
+                                <button class="btn btn-success" type="submit">Actualizar</button>
+                                <a class="btn btn-danger" th:href="@{/alumnos/list}" href="#" role="button">Cancelar</a>
+                            </div>
+
+                            <a class="btn btn-danger" th:href="@{/alumnos/delete/}+${alumno.codigo}" href="#" role="button"><i class="bi bi-trash"></i></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div th:replace="commons/footer :: footer" class="container"></div>
+
+</body>
+
+</html>
