@@ -12,12 +12,12 @@
             <div class="row g-5">
 
                 <div class="col-8">
-                    <h4 class="mb-3">Datos Alumno</h4>
+                    <h4 class="mb-3" th:text="#{alumno.dato}">Datos Alumno</h4>
 
                     <form class="needs-validation" method="post" th:action="@{/alumnos/save}" enctype="multipart/form-data">
                         <div class="row g-4">
                             <div class="col-sm-6">
-                                <label for="nombre" class="form-label">Nombre</label>
+                                <label for="nombre" class="form-label" th:text="#{alumno.nombre}">Nombre</label>
 
                                 <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" th:value="${alumno.nombre}" value="" required>
 
@@ -27,7 +27,7 @@
                             </div>
 
                             <div class="col-sm-6">
-                                <label for="lastName" class="form-label">Apellidos</label>
+                                <label for="lastName" class="form-label" th:text="#{alumno.apellidos}">Apellidos</label>
 
                                 <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="" th:value="${alumno.apellidos}" value="" required>
 
@@ -37,7 +37,7 @@
                             </div>
 
                             <div class="col-sm-6">
-                                <label for="dni" class="form-label">DNI</label>
+                                <label for="dni" class="form-label" th:text="#{alumno.dni}">DNI</label>
 
                                 <input type="text" class="form-control" id="dni" name="dni" placeholder="" th:value="${alumno.dni}" value="" required>
 
@@ -47,13 +47,13 @@
                             </div>
 
                             <div class="col-sm-6">
-                                <label for="fechaNacimiento" class="form-label">Fecha Nacimiento</label>
+                                <label for="fechaNacimiento" class="form-label" th:text="#{alumno.fechaNac}">Fecha Nacimiento</label>
                                
                                 <input type="text" class="form-control" id="fechaNacimiento" name="fechaNacimiento" placeholder="" th:value="${alumno.fechaNacimiento}" value="">
                             </div>
 
                             <div class="col-sm-12">
-                                <label for="email" class="form-label">Email</label>
+                                <label for="email" class="form-label" th:text="#{alumno.email}">Email</label>
 
                                 <input type="email" class="form-control" id="email" name="email" th:value="${alumno.email}" placeholder="correo@ejemplo.com">
 
@@ -65,13 +65,13 @@
                             <div class="col-sm-6">
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="nuevo" name="nuevo" th:checked="${alumno.nuevo}">
-                                    <label class="form-check-label" for="nuevo">Es alumno nuevo</label>
+                                    <label class="form-check-label" for="nuevo" th:text="#{alumno.nuevo}">Es alumno nuevo</label>
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="imagen">Imagen</label>
+                                    <label for="imagen" th:text="#{alumno.imagen}">Imagen</label>
                                     <input type="file" class="form-control-file" id="imagenForm" name="imagenForm">
                                   </div>
                             </div>
@@ -81,8 +81,8 @@
 
                         <div class="col-sm-12">
                             <div class="btn-group">
-                                <button class="btn btn-success" type="submit">Crear</button>
-                                <a class="btn btn-danger" th:href="@{/alumnos/list}" href="#" role="button">Cancelar</a>
+                                <button class="btn btn-success" type="submit" th:text="#{boton.crear}">Crear</button>
+                                <a class="btn btn-danger" th:href="@{/alumnos/list}" href="#" role="button" th:text="#{boton.cancelar}">Cancelar</a>
                             </div>
                         </div>
                     </form>

@@ -9,28 +9,28 @@
     <div class="container">
 
         <div class="row">
-            <h3>Alumnos</h3>
+            <h3 th:text="#{alumnos.titulo}">Alumnos</h3>
         </div>
 
         <div class="row">
             <div class="col-lg-3">
-                <a th:href="@{/alumnos/create}" class="btn btn-primary btn-sm mb-3">Nuevo alumno</a>
+                <a th:href="@{/alumnos/create}" class="btn btn-primary btn-sm mb-3" th:text="#{alumnos.nuevo.alumno}">Nuevo alumno</a>
             </div>
         </div>
 
         <div class="row">
             <table class="table table-striped table-hover">
-                <caption>Lista de alumnos</caption>
+                <caption th:text="#{alumnos.listado.titulo}">Lista de alumnos</caption>
 
                 <thead>
                     <tr>
-                        <th scope="col">Código</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellidos</th>
-                        <th scope="col">DNI</th>
-                        <th scope="col">Fecha nacimiento</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">¿Es nuevo?</th>
+                        <th scope="col" th:text="#{alumno.codigo}">Código</th>
+                        <th scope="col" th:text="#{alumno.nombre}">Nombre</th>
+                        <th scope="col" th:text="#{alumno.apellidos}">Apellidos</th>
+                        <th scope="col" th:text="#{alumno.dni}">DNI</th>
+                        <th scope="col" th:text="#{alumno.fechaNac}">Fecha nacimiento</th>
+                        <th scope="col" th:text="#{alumno.email}">Email</th>
+                        <th scope="col" th:text="#{alumno.nuevo}">¿Es nuevo?</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>

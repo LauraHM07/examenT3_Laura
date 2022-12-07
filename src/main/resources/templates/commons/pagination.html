@@ -6,13 +6,13 @@
             <li class="page-item" th:if="${numPage > 1}">
                 <a class="page-link"
                     th:href="@{../../../list/{numPage}/{fieldSort}/{directionSort}(numPage=1,fieldSort=${fieldSort},directionSort=${directionSort})}"
-                    aria-label="Primero" title="Primero">Primero</a>
+                    aria-label="Primero" title="Primero" th:text="#{paginado.primero}">Primero</a>
             </li>
 
             <li class="page-item" th:if="${numPage > 1}" th:classappend="${ numPage > totalPages} ? 'disabled' ">
                 <a class="page-link"
                     th:href="@{../../../list/{numPage}/{fieldSort}/{directionSort}(numPage=${numPage-1},fieldSort=${fieldSort},directionSort=${directionSort})}"
-                    aria-label="Anterior" title="Anterior">Anterior</a>
+                    aria-label="Anterior" title="Anterior" th:text="#{paginado.anterior}">Anterior</a>
             </li>
 
             <li class="page-item" th:classappend="${i eq numPage} ? 'active'"
@@ -33,7 +33,7 @@
                 <a class="page-link svg-icon"
                     th:href="@{../../../list/{numPage}/{fieldSort}/{directionSort}(numPage=${numPage+1},fieldSort=${fieldSort},directionSort=${directionSort})}"
                     aria-label="Siguiente" title="Siguiente" rel="tooltip">
-                    <span aria-hidden="true" data-feather="chevrons-right" width="20" height="20">Siguiente</span>
+                    <span aria-hidden="true" data-feather="chevrons-right" width="20" height="20" th:text="#{paginado.siguiente}">Siguiente</span>
                 </a>
             </li>
 
@@ -41,7 +41,7 @@
                 th:classappend="${numPage eq totalPages} ? 'disabled'">
                 <a class="page-link"
                     th:href="@{../../../list/{numPage}/{fieldSort}/{directionSort}(numPage=${totalPages},fieldSort=${fieldSort},directionSort=${directionSort})}"
-                    aria-label="Último" title="Último">Último</a>
+                    aria-label="Último" title="Último" th:text="#{paginado.ultimo}">Último</a>
             </li>
         </ul>
     </nav>
